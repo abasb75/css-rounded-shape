@@ -1,0 +1,138 @@
+@import url(fonts/icomoon/style.css);
+
+*{
+    outline: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 1s background , .5s color;
+}
+
+html,body{
+  display: block;
+  min-width: 1280px;
+  min-height: 600px;
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 0px; /* Specified height */
+    background: #00000000; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border:none;
+    pointer-events: none;
+  }
+
+  .dark .slider{
+    opacity: 1 !important;
+  }
+
+  .track-bottom-left-y.slider{
+    transform: rotate(-90deg);
+    transform-origin: left;
+  }
+  
+  .bottom-right.x.slider{
+    transform: rotate(180deg);
+  }
+
+  .bottom-right.y.slider{
+    transform: rotate(-90deg);
+    transform-origin: right;
+  }
+
+  .top-right.x.slider{
+    direction: rtl;
+  }
+  .top-right.y.slider{
+    direction: rtl;
+    transform: rotate(-90deg);
+    transform-origin: right;
+  }
+  .top-left.y.slider{
+    transform: rotate(90deg);
+    transform-origin: left;
+  }
+
+
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 1px; /* Set a specific slider handle width */
+    height: 1px; /* Slider handle height */
+    cursor: pointer; /* Cursor on hover */
+    pointer-events: all;
+    position: relative;
+    transform: scale(12);
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 12px; /* Set a specific slider handle width */
+    height: 12px; /* Slider handle height */
+    cursor: pointer; /* Cursor on hover */
+    pointer-events: all;
+  }
+  
+  .top-left::-webkit-slider-thumb{
+    background: #c206a2 !important;
+  }
+  .top-left::-moz-range-thumb{
+    background: #c206a2 !important;
+  }
+
+  .top-right::-webkit-slider-thumb{
+    background: #009266 !important;
+  }
+  .top-right::-moz-range-thumb{
+    background: #009266 !important;
+  }
+
+  .bottom-left::-webkit-slider-thumb{
+    background: #0cacdd !important;
+  }
+  .bottom-left::-moz-range-thumb{
+    background: #0cacdd !important;
+  }
+
+  .bottom-right::-webkit-slider-thumb{
+    background: tomato !important;
+  }
+  .bottom-right::-moz-range-thumb{
+    background: tomato !important;
+  }
+
+.tail{
+  position: relative;
+  width: 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.tail::after{
+  content: " ";
+  position: absolute;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #878787 transparent transparent  transparent;
+  margin-top: 6px;
+}
+
